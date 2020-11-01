@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(?:rathodloki\.)github\.io$ [NC]
+RewriteRule ^ http://rathodloki.com%{REQUEST_URI} [L,R=301]
