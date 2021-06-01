@@ -1174,12 +1174,11 @@ section {
 
 .credits {
   text-align: center;
-  font-size: 8px;
+  font-size: 13px;
   font-family: "Open Sans", sans-serif;
   color:  #e7e7e7;
   background-color: 	#141414;
 }
-
 .profile{
   border-radius: 7px;
 }
