@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var dark=true
+	var dark=false
 	$(".nav-menu li:nth-child(3)").click(function(){
 	if(dark){
 	$('link[href="assets/css/style.css"]').attr('href','assets/css/style2.css');
