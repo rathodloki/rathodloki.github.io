@@ -1169,7 +1169,7 @@ section {
   margin: 0 0 0px 0;
   text-align: center;
   font-size: 8px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: 8px;
   color:  #3a3a3a;
   background-color: 		#ececec;
@@ -1178,10 +1178,15 @@ section {
 .credits {
   text-align: center;
   font-size: 13px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color:  #ececec;
   background-color: 	#1d1d1d;
 }
+
+.credits i{
+	color: #0563bb;
+}
+
 .profile{
   border-radius: 7px;
 }

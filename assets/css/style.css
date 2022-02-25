@@ -1167,19 +1167,22 @@ section {
   margin: 0 0 0px 0;
   text-align: center;
   font-size: 8px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: 8px;
   color:  #e7e7e7;
   background-color: 		#141414;
 }
-
 .credits {
   text-align: center;
   font-size: 13px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color:  #e7e7e7;
-  background-color: 	#141414;
+  background-color: 	#f7f8f9;
 }
+.credits i{
+	color: #0563bb;
+}
+
 .profile{
   border-radius: 7px;
 }
