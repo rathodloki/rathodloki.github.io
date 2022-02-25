@@ -1,4 +1,13 @@
 $(document).ready(function(){
+	function date_finder(date)
+	{
+		date = new Date(date);
+		var today = new Date();
+		var diff = Math.floor((today-date) / (365.25 * 24 * 60 * 60 * 1000));
+		return diff;
+	}
+	$("age").html(date_finder("1998-08-23"));
+	$("#exp_desc text").html(date_finder("2019-12-02"));
 	var dark=false
 	$(".nav-menu li:nth-child(3)").click(function(){
 	if(dark){
