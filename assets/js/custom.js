@@ -5,12 +5,12 @@ $(document).ready(function(){
 	$(".nav-menu li:nth-child(3)").click(function(){
 		if(dark){
 			$('link[href="assets/css/style.css"]').attr('href','assets/css/style2.css');
-			$(".nav-menu li:nth-child(3) a  span").attr("data-icon","ic:outline-dark-mode").text("Dark");
+			$(".nav-menu li:nth-child(3) a  svg, span ").attr("data-icon","ic:outline-dark-mode").text("Dark");
 			dark = false;
 		}
 		else{
 			$('link[href="assets/css/style2.css"]').attr('href','assets/css/style.css');
-			$(".nav-menu li:nth-child(3) a span").attr("data-icon","ic:outline-light-mode").text("Light");
+			$(".nav-menu li:nth-child(3) a svg, span").attr("data-icon","ic:outline-light-mode").text("Light");
 			dark = true;
 		}
 	})
