@@ -16,18 +16,34 @@
     }
   });
 
-  // Hero typed
-  if ($('.typed').length) {
-    var typed_strings = $(".typed").data('typed-items');
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
+  const textContainer = document.querySelector('.scroll-text-container');
+  const texts = document.querySelectorAll('.scroll-text');
+  
+  // Clone the text elements and append them to the container
+  texts.forEach(text => {
+      const clone = text.cloneNode(true);
+      textContainer.appendChild(clone);
+  });
+  
+  let currentIndex = 0;
+  
+  function scrollText() {
+      const height = texts[0].offsetHeight;
+      currentIndex++;
+      
+      textContainer.style.transition = `transform 0.5s ease`;
+      textContainer.style.transform = `translateY(-${currentIndex * height}px)`;
+  
+      if (currentIndex >= texts.length) {
+          setTimeout(() => {
+              textContainer.style.transition = 'none';
+              textContainer.style.transform = 'translateY(0)';
+              currentIndex = 0;
+          }, 500);
+      }
   }
+  
+  setInterval(scrollText, 3000);
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function(e) {

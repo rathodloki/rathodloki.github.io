@@ -11,13 +11,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "manrope", sans-serif;
   color: #FAF9F8;
   background-color: #000;
 }
 
 a {
-  color: #296fe6;
+  color: rgb(168 168 168);
 }
 
 a:hover {
@@ -26,7 +26,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "manrope", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -37,10 +37,10 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
   width: 40px;
   height: 40px;
-  border-radius: 50px;
+  border-radius: 0px;
   right: 15px;
   bottom: 15px;
-  background: #296fe6;
+  background: rgb(168 168 168);
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #296fe6;
+  border: 6px solid rgb(168 168 168);
   border-top-color: #000;
   border-bottom-color: #000;
   border-radius: 50%;
@@ -162,7 +162,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: flex;
   align-items: center;
-  color: #a9c4df;
+  color: rgb(168 168 168);;
   padding: 10px 18px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -200,13 +200,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #fff;
-  background: #296fe6;
+  background: rgb(168 168 168);
   box-shadow: 0px 0px 0px 0px #00477d;
   
 }
 
 .nav-menu .active > a {
-  box-shadow: 5px 0px 0px 0px #00477d;
+  box-shadow: 5px 0px 0px 0px #ffffff;
 }
 
 .nav-menu a:hover span, .nav-menu .active > a span, .nav-menu li:hover > a span {
@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-active .mobile-nav-toggle i {
-  color: #296fe6;
+  color: rgb(168 168 168);
 }
 
 /*--------------------------------------------------------------
@@ -260,10 +260,32 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg2.png");
+  /* background: url("../img/hero-bg2.png"); */
+  background-color: black;
   background-size: cover;
   position: relative;
   
+}
+.social-hero-links {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.social-hero-links a {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: rgb(168 168 168);
+  transition: color 0.3s ease;
+}
+
+.social-hero-links a:hover {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #ddd;
+  transition: color 0.3s ease;
 }
 
 @media (min-width: 992px) {
@@ -285,23 +307,34 @@ h1, h2, h3, h4, h5, h6 {
 #hero h1 {
   margin: 0;
   font-size: 64px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #F3f2f1;
+  line-height: 70px;
+  color: rgb(168 168 168);
 }
 
 #hero p {
-  color: #F3f2f1;
-  margin: 15px 0 0 0;
-  font-size: 26px;
-  font-family: "Poppins", sans-serif;
+  color: rgb(168 168 168);
+  font-size: 64px;
+  font-family: "manrope", sans-serif;
 }
 
-#hero p span {
-  color: #296fe6;
-  letter-spacing: 1px;
+.scroll-container {
+  overflow: hidden;
+  height: 100px;
+  width: 100%; /
 }
-
+.scroll-text-container {
+  transition: transform 0.5s ease;
+}
+.scroll-text {
+  height: 100px;
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  font-size: 64px;
+  /* color: rgb(168 168 168); */
+  color: #ddd;
+  white-space: nowrap;
+}
 #hero .social-links {
   margin-top: 30px;
 }
@@ -309,14 +342,14 @@ h1, h2, h3, h4, h5, h6 {
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: #F3f2f1;
+  color: rgb(168 168 168);
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
 }
 
 #hero .social-links a:hover {
-  color: #296fe6;
+  color: #fff;
 }
 
 @media (max-width: 992px) {
@@ -350,7 +383,6 @@ section {
 
 .section-title h2 {
   font-size: 32px;
-  font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -375,7 +407,7 @@ section {
   display: block;
   width: 40px;
   height: 3px;
-  background: #296fe6;
+  background: rgb(168 168 168);
   bottom: 0;
   left: calc(50% - 20px);
 }
@@ -405,7 +437,7 @@ section {
 .about .content ul i {
   font-size: 20px;
   padding-right: 2px;
-  color: #296fe6;
+  color: rgb(168 168 168);
 }
 
 .about .content p:last-child {
@@ -430,7 +462,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   font-size: 24px;
-  background: #296fe6;
+  background: rgb(168 168 168);
   padding: 12px;
   color: #000;
   border-radius: 50px;
@@ -475,14 +507,14 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #f2f3f5;
+  background: rgb(168 168 168);
 }
 
 .skills .progress-bar {
   width: 1px;
   height: 10px;
   transition: .9s;
-  background-color: #296fe6;
+  background-color: hsl(139, 100%, 85%);
 }
 
 /*--------------------------------------------------------------
@@ -490,26 +522,25 @@ section {
 --------------------------------------------------------------*/
 .resume .resume-title {
   font-size: 26px;
-  font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #a9c4df;
+  color: #fff;
 }
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #296fe6;
+  border-left: 2px solid rgb(168 168 168);
   position: relative;
 }
 
 .resume .resume-item h4 {
   line-height: 18px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 0;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #296fe6;
+  color: rgb(168 168 168);
   margin-bottom: 10px;
 }
 
@@ -518,7 +549,7 @@ section {
   background: #1d1d1d;
   padding: 5px 15px;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 0;
   margin-bottom: 10px;
 }
 
@@ -543,7 +574,7 @@ section {
   left: -9px;
   top: 0;
   background: #000;
-  border: 2px solid #296fe6;
+  border: 2px solid rgb(168 168 168);
 }
 
 /*--------------------------------------------------------------
@@ -577,7 +608,7 @@ section {
 }
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
-  color: #296fe6;
+  color: rgb(168 168 168);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -904,7 +935,7 @@ section {
 }
 
 .testimonials .owl-dot.active {
-  background-color: #296fe6 !important;
+  background-color: rgb(168 168 168) !important;
 }
 
 @media (min-width: 992px) {
@@ -923,7 +954,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #296fe6;
+  color: rgb(168 168 168);
   float: left;
   width: 44px;
   height: 44px;
@@ -940,14 +971,14 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #a9c4df;
+  color: rgb(168 168 168);
 }
 
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #a9c4df;
+  color: rgb(168 168 168);
 }
 
 .contact .info .email, .contact .info .phone {
@@ -955,7 +986,7 @@ section {
 }
 
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #296fe6;
+  background: rgb(168 168 168);
   color: #000;
 }
 
@@ -1033,7 +1064,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #296fe6;
+  background: rgb(168 168 168);
   border: 0;
   padding: 10px 35px;
   color: #000;
@@ -1091,7 +1122,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #296fe6 !important;
+  background-color: rgb(168 168 168) !important;
 }
 
 .portfolio-details .portfolio-info {
@@ -1159,7 +1190,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #296fe6;
+  background: rgb(168 168 168);
   color: #000;
   line-height: 1;
   padding: 8px 0;
@@ -1196,7 +1227,7 @@ section {
 }
 
 .credits i{
-	color: #0563bb;
+	color: rgb(117, 117, 117);
 }
 
 .profile{
