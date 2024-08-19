@@ -23,3 +23,10 @@ function date_finder(date)
 	var diff = Math.floor((today-date) / (365.25 * 24 * 60 * 60 * 1000));
 	return diff;
 }
+
+document.querySelector('.scroll-down-btn a').addEventListener('click', function(e) {
+	e.preventDefault();
+	const targetId = this.getAttribute('href');
+	const targetElement = document.querySelector(targetId);
+	targetElement.scrollIntoView({ behavior: 'smooth' });
+  });
