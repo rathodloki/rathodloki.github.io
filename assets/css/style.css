@@ -53,8 +53,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  color: #fff;
-  background: #0678e3;
+  color: #000;
+  background: #bbb;
   transition: background 0.2s ease-in-out;
 }
 
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   font-size: 15px;
   border-radius: 0px;
-  background: #f2f3f5;
+  background: #eeee;
   height: 56px;
   width: 100%;
   overflow: hidden;
@@ -193,17 +193,17 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
     color: #fff;
   }
+  
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #fff;
-  background: #296fe6;
-  box-shadow: 0px 0px 0px 0px #00477d;
+  background: rgb(45, 45, 45);
   
 }
 
 .nav-menu .active > a {
-  box-shadow: 5px 0px 0px 0px #00477d;
+  box-shadow: 5px 0px 0px 0px #444;
 }
 
 .nav-menu a:hover span, .nav-menu .active > a span, .nav-menu li:hover > a span {
@@ -262,6 +262,41 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+#bg-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  background-size: cover;
+  filter: brightness(50%) contrast(110%) invert(100%);
+}
+
+.social-hero-links {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.social-hero-links a {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: rgb(95, 95, 95);
+  transition: color 0.3s ease;
+}
+
+.social-hero-links a:hover {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: rgb(45, 45, 45);
+  transition: color 0.3s ease;
+}
+
 @media (min-width: 992px) {
   #hero {
     padding-left: 160px;
@@ -300,7 +335,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   font-size: 64px;
   /* color: rgb(168 168 168); */
-  color: #444;
+  color: rgb(117, 117, 117);;
   white-space: nowrap;
 }
 
@@ -334,6 +369,30 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
     font-size: 20px;
     line-height: 24px;
+  }
+  .social-hero-links {
+    display: none;
+  }
+  #hero .scroll-container {
+    overflow: hidden;
+    height: 10vh;
+    width: 100%;
+  }
+
+  #hero .scroll-text-container {
+    transition: transform 0.5s ease;
+  }
+
+  #hero .scroll-text {
+    height: 100px;
+    display: flex;
+    padding: 0px;
+    padding-left: 20px;
+    align-items:flex-start;
+    text-align: center;
+    font-size: 4vh;
+    color: #444;
+    white-space: wrap;
   }
 }
 
@@ -483,7 +542,7 @@ section {
   width: 1px;
   height: 10px;
   transition: .9s;
-  background-color: #000;
+  background-color:  hsl(139, 44%, 62%);
 }
 
 /*--------------------------------------------------------------
@@ -927,7 +986,7 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #eef7ff;
+  background: #f7f8f9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1170,7 +1229,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #0678e3;
+  background: #909090;
   color: #fff;
   text-decoration: none;
 }
@@ -1203,4 +1262,57 @@ section {
 .profile:hover, .profile:active
 {
   box-shadow: 0px 0px 0px 0px #222;
+}
+
+.scroll-down-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.scroll-down-btn a {
+  display: inline-block;
+  color: #444;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.scroll-down-btn i {
+  animation: scrollDownAnimation 2s infinite;
+}
+
+@keyframes scrollDownAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wave {
+  animation-name: wave-animation;  
+  animation-duration: 2.5s;        
+  animation-iteration-count: infinite;  
+  transform-origin: 70% 70%;       
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) } 
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) } 
+  100% { transform: rotate( 0.0deg) }
 }
