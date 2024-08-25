@@ -80,5 +80,3 @@ document.querySelector('.scroll-down-btn a').addEventListener('click', function(
 
   setupInfiniteScroll();
   scrollRecommendations();
-
-  
