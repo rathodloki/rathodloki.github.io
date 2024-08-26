@@ -3,15 +3,19 @@ $(document).ready(function(){
 	$("age").html(date_finder("1998-08-23"));
 	$("#exp_desc text").html(date_finder("2019-12-02"));
 	$(".nav-menu li:nth-child(3)").click(function(){
+		const svgPath = document.querySelector('footer a svg path');
 		if(dark){
 			$('link[href="assets/css/style.css"]').attr('href','assets/css/style2.css');
 			$(".nav-menu li:nth-child(3) a  svg, .nav-menu li:nth-child(3) a span ").attr("data-icon","ic:outline-dark-mode").text("Dark");
 			dark = false;
+			svgPath.setAttribute('fill', 'rgb(168, 168, 168)');
 		}
 		else{
 			$('link[href="assets/css/style2.css"]').attr('href','assets/css/style.css');
 			$(".nav-menu li:nth-child(3) a svg, .nav-menu li:nth-child(3) a span").attr("data-icon","ic:outline-light-mode").text("Light");
+			svgPath.setAttribute('fill', '#000000');
 			dark = true;
+			
 		}
 	})
 });
