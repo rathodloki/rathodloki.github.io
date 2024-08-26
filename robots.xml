@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+
+# Prevent crawling of certain directories
+Disallow: /assets/vendor/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /admin/
+
+# Allow Google to access JavaScript and CSS files
+User-agent: Googlebot
+Allow: /*.js$
+Allow: /*.css$
+
+# Prevent media files from being indexed
+Disallow: /*.gif$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.pdf$
+
+# Crawl-delay directive (adjust as needed)
+Crawl-delay: 10
