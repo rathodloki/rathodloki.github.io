@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { buttonVariants } from "@/components/ui/button";

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Statistics = () => {
   interface StatsProps {
     quantity: string;

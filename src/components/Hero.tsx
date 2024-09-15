@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { buttonVariants } from "./ui/button";
 import { HeroCards } from "./HeroCards";
-import { MailPlus } from "lucide-react";
+import { MailPlus, Github } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -26,8 +26,12 @@ export const Hero = () => {
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
-          <Button className="w-full md:w-1/3" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
+          <Button 
+            className="w-full md:w-1/3" 
+            onClick={() => window.open('https://github.com/yourusername', '_blank')}
+          >
             View My Work
+            <Github className="ml-2 h-5 w-5" strokeWidth={2.5} />
           </Button>
 
           <a
