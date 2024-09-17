@@ -36,7 +36,7 @@ const routeList: RouteProps[] = [
   },
   {
     href: "#recommend",
-    label: "Recommendarions",
+    label: "Recommendations",
   }
 ];
 

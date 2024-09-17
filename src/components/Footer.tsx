@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Footer = () => {
   return (
     <footer id="footer">
@@ -8,6 +10,7 @@ export const Footer = () => {
           <a
             rel="noreferrer noopener"
             href="/"
+            target="_blank"
             className="font-bold text-xl flex items-center"
           >
             <span className="font-amsterdam text-2xl ml-2">Lokendar Singh Rathore</span>
@@ -19,6 +22,8 @@ export const Footer = () => {
           <div>
             <a
               href="mailto:rathodlokendar@gmail.com"
+              target="_blank"
+              rel="noreferrer noopener"
               className="opacity-60 hover:opacity-100"
             >
               Email
@@ -35,6 +40,7 @@ export const Footer = () => {
             <a
               rel="noreferrer noopener"
               href="https://github.com/rathodloki"
+              target="_blank"
               className="opacity-60 hover:opacity-100"
             >
               GitHub
@@ -44,6 +50,7 @@ export const Footer = () => {
             <a
               rel="noreferrer noopener"
               href="https://www.linkedin.com/in/lokendar-singh/"
+              target="_blank"
               className="opacity-60 hover:opacity-100"
             >
               LinkedIn
@@ -53,6 +60,7 @@ export const Footer = () => {
             <a
               rel="noreferrer noopener"
               href="https://x.com/rathodloki"
+              target="_blank"
               className="opacity-60 hover:opacity-100"
             >
               Twitter
@@ -86,7 +94,7 @@ export const Footer = () => {
               href="#recommend"
               className="opacity-60 hover:opacity-100"
             >
-              testimonial
+              Recommendations
             </a>
           </div>
         </div>
@@ -96,6 +104,8 @@ export const Footer = () => {
           <div>
             <a
               href="https://buymeacoffee.com/rathodloki"
+              target="_blank"
+              rel="noreferrer noopener"
               className="opacity-60 hover:opacity-100"
             >
               Buy me a coffee
@@ -106,7 +116,7 @@ export const Footer = () => {
 
       <section className="container pb-14 text-center">
         <h3>
-          &copy; {new Date().getFullYear()} Portfolio by <span >Lokendar Singh Rathore</span>
+          &copy; {new Date().getFullYear()} Portfolio by <span>Lokendar Singh Rathore</span>
         </h3>
         <p className="mt-2 text-sm opacity-60">I hope you like my Portfolio. 😊</p>
       </section>

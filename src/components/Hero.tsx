@@ -1,7 +1,8 @@
 import { Button } from "./ui/button";
 import { buttonVariants } from "./ui/button";
 import { HeroCards } from "./HeroCards";
-import { MailPlus, Github } from "lucide-react";
+import { MailPlus } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export const Hero = () => {
   return (
@@ -31,7 +32,7 @@ export const Hero = () => {
             onClick={() => window.open('https://github.com/rathodloki', '_blank')}
           >
             View My Work
-            <Github className="ml-2 h-5 w-5" strokeWidth={2.5} />
+            <GitHubLogoIcon className="ml-2 h-5 w-5" strokeWidth={2.5} />
           </Button>
 
           <a
