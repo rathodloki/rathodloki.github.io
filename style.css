@@ -432,6 +432,12 @@ body {
 
 /* --- Mobile Responsive (Clean Stack) --- */
 @media (max-width: 900px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: auto;
+    }
+
     .terminal-container { flex-direction: column; height: auto; min-height: 100vh; }
     
     .terminal-nav {
@@ -449,6 +455,7 @@ body {
         display: flex;
         overflow-x: auto;
         padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
     }
     .nav-list::-webkit-scrollbar { display: none; }
     
@@ -464,8 +471,16 @@ body {
     
     /* Content */
     .terminal-content { overflow: visible; } /* Allow standard swipe scrolling on mobile */
-    .content-header { padding: 0 20px; }
-    .content-body { padding: 20px; overflow-y: visible; }
+    .content-header { padding: 0 15px; font-size: 0.75rem; }
+    
+    .path-display {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 65vw;
+    }
+    
+    .content-body { padding: 20px 15px; overflow-y: visible; height: auto; }
     
     .metrics-grid { grid-template-columns: 1fr; }
     .t-head { flex-direction: column; }
