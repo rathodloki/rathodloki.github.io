@@ -1,100 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Custom Cursor ---
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Dot follows instantly
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        // Outline follows with lag (handled by CSS transition, just updating pos)
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    // --- 3D Tilt Effect for Profile ---
-    const card = document.querySelector('.tilt-card');
-    const img = document.querySelector('.profile-pic');
-
-    if (card) {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within the element
-            const y = e.clientY - rect.top;  // y position within the element
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
-            const rotateY = ((x - centerX) / centerX) * 10;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-            // Set CSS variables for holographic shine
-            const xPct = (x / rect.width) * 100;
-            const yPct = (y / rect.height) * 100;
-            card.style.setProperty('--mouse-x', `${xPct}%`);
-            card.style.setProperty('--mouse-y', `${yPct}%`);
-
-            if (img) {
-                // Parallax for inner image
-                img.style.transform = `translateZ(50px) scale(1.1)`;
-            }
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0)`;
-            if (img) img.style.transform = `translateZ(0) scale(1)`;
-        });
+    // --- Clock Logic ---
+    function updateTime() {
+        const timeEl = document.getElementById('sys-time');
+        if (!timeEl) return;
+        
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+        timeEl.textContent = timeString;
     }
+    
+    setInterval(updateTime, 1000);
+    updateTime(); // Initial call
 
-    // --- Magnetic Buttons ---
-    const magneticBtns = document.querySelectorAll('.btn-magnetic');
 
-    magneticBtns.forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
+    // --- High Performance Tab Switching ---
+    // Instead of heavy DOM manipulation or dragging, we just toggle CSS classes.
+    // CSS handles the animation via hardware-accelerated properties (opacity/transform).
+    
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sys-section');
+    const pathDisplay = document.getElementById('current-path');
 
-            // Move button slightly towards cursor
-            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-        });
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Ignore if already active
+            if (item.classList.contains('active')) return;
 
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translate(0px, 0px)';
-        });
-    });
+            // 1. Remove active state from all navs
+            navItems.forEach(nav => nav.classList.remove('active'));
+            
+            // 2. Add active state to clicked nav
+            item.classList.add('active');
 
-    // --- Reveal Animations ---
-    const sections = document.querySelectorAll('.hero-heading, .hero-sub, .hero-actions, .bento-card, .job-card');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+            // 3. Update the path display text
+            const targetId = item.getAttribute('data-target');
+            if (pathDisplay) {
+                // Remove 'sys-' prefix for the path display
+                const pathName = targetId.replace('sys-', '');
+                pathDisplay.textContent = `root@lsr:~/${targetId.replace('-', '/')}`;
             }
-        });
-    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
-        observer.observe(section);
+            // 4. Switch Content Sections
+            sections.forEach(sec => {
+                // Remove active class instantly
+                sec.classList.remove('active');
+                
+                // If this is the target section, activate it
+                if (sec.id === targetId) {
+                    sec.classList.add('active');
+                    
+                    // Re-trigger the CSS animation by removing and re-adding the animation classes
+                    // We only animate specific child elements for performance
+                    const typeElements = sec.querySelectorAll('.type-in');
+                    const fadeElements = sec.querySelectorAll('.fade-in');
+                    const slideElements = sec.querySelectorAll('.slide-up');
+                    
+                    typeElements.forEach(el => restartAnimation(el, 'type-in'));
+                    fadeElements.forEach(el => restartAnimation(el, 'fade-in'));
+                    slideElements.forEach(el => restartAnimation(el, 'slide-up'));
+                }
+            });
+        });
     });
 
-    // --- Time Update ---
-    // (Optional: if we kept the clock, but we removed it for a cleaner UI. 
-    // Instead we have 'ONLINE' status which is static or CSS animated)
+    // Helper to restart CSS animations reliably
+    function restartAnimation(element, className) {
+        element.classList.remove(className);
+        void element.offsetWidth; // Trigger reflow (forces browser to acknowledge class removal)
+        element.classList.add(className);
+    }
 
 });
