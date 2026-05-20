@@ -1,377 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokendar SR | CloudOps &amp; SRE Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Lokendar SR, Technical Lead focused on CloudOps, automation, DevOps, and site reliability engineering.">
-    <meta name="theme-color" content="#08111b">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lokendar Singh Rathod | Lead DevOps & SRE</title>
+    <meta name="description" content="Portfolio of Lokendar Singh Rathod, Lead DevOps and Site Reliability Engineer. Custom automated cloud solutions.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
-    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
 </head>
-
 <body>
-    <div class="site-bg" aria-hidden="true">
-        <div class="site-gradient gradient-one"></div>
-        <div class="site-gradient gradient-two"></div>
-        <div class="site-grid"></div>
-    </div>
 
-    <div class="page-shell">
-        <aside class="side-rail">
-            <a class="brand-mark" href="#overview">LSR // Reliability Mode</a>
+    <!-- Container for @paper-design/shaders dynamic WebGL background -->
+    <div id="bg-canvas-container"></div>
 
-            <div class="profile-card panel reveal visible">
-                <div class="profile-top">
-                    <span class="eyebrow">Technical Lead • CloudOps / SRE</span>
-                    <span class="status-pill">
-                        <span class="status-dot"></span>
-                        Open to lead roles
-                    </span>
+    <!-- Dot Grid Layer for premium background texture -->
+    <div class="dot-grid"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-contact">
+            <a href="mailto:rathodlokendar@gmail.com" class="nav-mail">
+                <i class="far fa-envelope"></i> rathodlokendar@gmail.com
+            </a>
+        </div>
+        <nav class="nav-socials">
+            <a href="https://www.linkedin.com/in/lokendar-singh/" target="_blank">LinkedIn</a>
+            <span class="nav-sep">/</span>
+            <a href="https://github.com/rathodloki" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="page-container">
+        
+        <!-- Hero Section -->
+        <section class="section hero-section">
+            <div class="avatar-wrapper scroll-reveal">
+                <img src="profile.png" alt="Lokendar Singh Rathod" class="avatar-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%231e293b%22/><text fill=%22%2394a3b8%22 font-size=%2228%22 font-family=%22sans-serif%22 x=%2250%22 y=%2260%22 text-anchor=%22middle%22>LSR</text></svg>'">
+            </div>
+            
+            <div class="hero-greet scroll-reveal">Hi, I'm Lokendar 👋</div>
+            
+            <h1 class="hero-title scroll-reveal">
+                Building digital foundations, resilient cloud ops, and deployment velocity.
+            </h1>
+            
+            <div class="hero-cta scroll-reveal">
+                <a href="#about" class="btn-arrow">
+                    <span>Explore Telemetry</span>
+                    <i class="fas fa-arrow-down-long"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Tech/Logos Section -->
+        <section class="section tech-section scroll-reveal">
+            <div class="tech-grid">
+                <div class="tech-logo"><span>AWS</span></div>
+                <div class="tech-logo"><span>Azure</span></div>
+                <div class="tech-logo"><span>Terraform</span></div>
+                <div class="tech-logo"><span>Kubernetes</span></div>
+                <div class="tech-logo"><span>Ansible</span></div>
+                <div class="tech-logo"><span>CI/CD</span></div>
+            </div>
+        </section>
+
+        <!-- About/Philosophy Section -->
+        <section id="about" class="section about-section">
+            <h2 class="section-lead scroll-reveal">
+                Collaborate to engineer predictable cloud infrastructure.
+            </h2>
+            
+            <div class="cards-grid">
+                <div class="feature-card scroll-reveal">
+                    <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <h3 class="card-title">CloudOps & SRE</h3>
+                    <p class="card-desc">Designing resilient multi-cloud systems on AWS and Azure with 100% uptime targets and high availability configurations.</p>
                 </div>
-
-                <img src="profile.png" alt="Lokendar SR" class="profile-avatar"
-                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><rect width=%22120%22 height=%22120%22 rx=%2224%22 fill=%22%230d1b2a%22/><text x=%2260%22 y=%2268%22 fill=%22%23f4b860%22 font-size=%2232%22 font-family=%22sans-serif%22 text-anchor=%22middle%22>LSR</text></svg>'">
-
-                <h1>Lokendar SR</h1>
-                <p class="profile-summary">
-                    I build calm, scalable delivery systems for teams that want faster releases and fewer surprises in
-                    production.
-                </p>
-
-                <div class="profile-meta">
-                    <div>
-                        <span class="meta-label">Current role</span>
-                        <strong>Tech Lead, Persistent Systems</strong>
-                    </div>
-                    <div>
-                        <span class="meta-label">Focus</span>
-                        <strong>Automation, IaC, cloud reliability</strong>
-                    </div>
+                
+                <div class="feature-card scroll-reveal">
+                    <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3 class="card-title">Infrastructure as Code</h3>
+                    <p class="card-desc">Authoring declarative IaC pipelines using Terraform and Ansible to ensure reproducible environments across production stages.</p>
                 </div>
-
-                <div class="quick-links">
-                    <a href="mailto:rathodlokendar@gmail.com" class="chip-link">
-                        <i class="fas fa-envelope"></i>
-                        Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/lokendar-singh/" target="_blank" rel="noopener noreferrer"
-                        class="chip-link">
-                        <i class="fab fa-linkedin-in"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/rathodloki" target="_blank" rel="noopener noreferrer" class="chip-link">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
+                
+                <div class="feature-card scroll-reveal">
+                    <div class="card-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3 class="card-title">Developer Platforms</h3>
+                    <p class="card-desc">Structuring containerized systems on Kubernetes and Docker, empowering developer velocity without operational bottlenecks.</p>
+                </div>
+                
+                <div class="feature-card scroll-reveal">
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="card-title">Observability Logs</h3>
+                    <p class="card-desc">Establishing deep telemetry and alert rules with Prometheus and Icinga to identify failures before they disrupt operations.</p>
                 </div>
             </div>
+        </section>
 
-            <nav class="section-nav panel reveal">
-                <a href="#overview" class="nav-link active">Overview</a>
-                <a href="#impact" class="nav-link">Impact</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#toolbox" class="nav-link">Toolbox</a>
-                <a href="#wins" class="nav-link">Highlights</a>
-                <a href="#connect" class="nav-link">Connect</a>
-            </nav>
-
-            <div class="signal-card panel reveal">
-                <p class="signal-label">Current signal</p>
-                <p class="signal-copy">
-                    Designing automation layers, deployment pipelines, and observability workflows that keep enterprise
-                    systems dependable at scale.
-                </p>
+        <!-- Experience Timeline Section -->
+        <section class="section experience-section">
+            <div class="section-side scroll-reveal">
+                <h2 class="section-side-title">// SYSTEM_LOGS_EXPERIENCE</h2>
+                <p class="section-side-desc">5.5+ years of operations history scaling deployments and managing cloud operations infrastructure.</p>
             </div>
-        </aside>
-
-        <main class="content-column">
-            <header class="topbar panel reveal visible">
-                <div>
-                    <p class="topbar-label">Mission Control</p>
-                    <p class="topbar-title">rathodloki.com</p>
-                </div>
-                <div class="topbar-meta">
-                    <span class="mono-badge">IST</span>
-                    <span class="clock-chip" id="sys-time">00:00:00</span>
-                </div>
-            </header>
-
-            <section id="overview" class="section panel hero-section reveal visible">
-                <div class="hero-copy">
-                    <p class="eyebrow">Reliability-first engineering portfolio</p>
-                    <h2>I design infrastructure and automation systems that let teams move fast without sacrificing
-                        stability.</h2>
-                    <p class="lead">
-                        With 5.5+ years across DevOps, CloudOps, and SRE, I turn complex delivery pipelines into
-                        predictable, well-instrumented platforms.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="mailto:rathodlokendar@gmail.com" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Start a conversation
-                        </a>
-                        <a href="#experience" class="btn btn-secondary">
-                            <i class="fas fa-layer-group"></i>
-                            View experience
-                        </a>
+            
+            <div class="timeline-wrapper">
+                
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">2025 — PRESENT</span>
+                        <span class="timeline-company">Persistent Systems</span>
+                    </div>
+                    <div class="timeline-main">
+                        <h3 class="timeline-role">Tech Lead - CloudOps</h3>
+                        <p class="timeline-description">Leading cloud operations and architecture frameworks. Defining site reliability guidelines, scaling infrastructure, and establishing continuous deployment automation strategies.</p>
                     </div>
                 </div>
 
-                <div class="hero-terminal">
-                    <div class="terminal-chrome">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <p>live-status.log</p>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">2021 — 2025</span>
+                        <span class="timeline-company">QAD</span>
                     </div>
-                    <div class="terminal-lines">
-                        <p><span class="prompt">$</span> profile --summary</p>
-                        <p>Role: Technical Lead, CloudOps &amp; Automation</p>
-                        <p>Core strength: IaC, CI/CD, observability, incident readiness</p>
-                        <p>Operating style: code-first systems with measurable reliability</p>
-                        <p><span class="prompt">$</span> goals --now</p>
-                        <p>Building enterprise automation frameworks and resilient delivery pipelines.</p>
+                    <div class="timeline-main">
+                        <h3 class="timeline-role">Automation Developer</h3>
+                        <p class="timeline-description">Migrated 10,000+ server configurations within a strict 3-week transition window. Built customized automation scripts and dashboards reducing operational incident response (MTTR) by 50%.</p>
                     </div>
                 </div>
-            </section>
 
-            <section id="impact" class="section panel reveal">
-                <div class="section-heading">
-                    <p class="eyebrow">Impact snapshot</p>
-                    <h3>Numbers that show how I work</h3>
-                </div>
-
-                <div class="metric-grid">
-                    <article class="metric-card">
-                        <span class="metric-value">5.5+</span>
-                        <span class="metric-label">Years in production engineering</span>
-                    </article>
-                    <article class="metric-card">
-                        <span class="metric-value">10k+</span>
-                        <span class="metric-label">Infrastructure configs migrated in 3 weeks</span>
-                    </article>
-                    <article class="metric-card">
-                        <span class="metric-value">50%</span>
-                        <span class="metric-label">Faster incident response with live dashboards</span>
-                    </article>
-                    <article class="metric-card">
-                        <span class="metric-value">80%</span>
-                        <span class="metric-label">Reduction in deployment lead time</span>
-                    </article>
-                </div>
-
-                <div class="playbook-grid">
-                    <article class="playbook-card">
-                        <h4>Code-first infrastructure</h4>
-                        <p>Terraform, automation frameworks, and repeatable delivery processes that scale with the
-                            business.</p>
-                    </article>
-                    <article class="playbook-card">
-                        <h4>Release acceleration</h4>
-                        <p>Pipeline design that shortens feedback loops without introducing operational chaos.</p>
-                    </article>
-                    <article class="playbook-card">
-                        <h4>Calm operations</h4>
-                        <p>Observability, dashboards, and operational guardrails that make incidents easier to detect
-                            and resolve.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section id="experience" class="section panel reveal">
-                <div class="section-heading">
-                    <p class="eyebrow">Career trajectory</p>
-                    <h3>Roles built around automation and reliability leadership</h3>
-                </div>
-
-                <div class="timeline">
-                    <article class="timeline-item current">
-                        <div class="timeline-meta">
-                            <div>
-                                <p class="timeline-role">Tech Lead - CloudOps &amp; Automation</p>
-                                <p class="timeline-company">Persistent Systems</p>
-                            </div>
-                            <span class="timeline-date">Dec 2025 - Present</span>
-                        </div>
-                        <p class="timeline-copy">
-                            Leading strategic cloud operations and shaping enterprise reliability with modern automation
-                            frameworks.
-                        </p>
-                        <ul class="timeline-points">
-                            <li>Owns delivery quality across cloud operations and automation strategy.</li>
-                            <li>Designs next-generation frameworks that improve repeatability and control.</li>
-                        </ul>
-                    </article>
-
-                    <article class="timeline-item">
-                        <div class="timeline-meta">
-                            <div>
-                                <p class="timeline-role">Automation Developer</p>
-                                <p class="timeline-company">QAD</p>
-                            </div>
-                            <span class="timeline-date">Sep 2021 - Nov 2025</span>
-                        </div>
-                        <p class="timeline-copy">
-                            Delivered large-scale internal tooling, dashboarding, and migration programs across
-                            infrastructure-heavy environments.
-                        </p>
-                        <ul class="timeline-points">
-                            <li>Migrated 10k+ infrastructure configurations in just 3 weeks.</li>
-                            <li>Built dashboards that cut incident response time by 50%.</li>
-                        </ul>
-                    </article>
-
-                    <article class="timeline-item">
-                        <div class="timeline-meta">
-                            <div>
-                                <p class="timeline-role">DevOps Engineer</p>
-                                <p class="timeline-company">Tekno Point</p>
-                            </div>
-                            <span class="timeline-date">Dec 2019 - Aug 2021</span>
-                        </div>
-                        <p class="timeline-copy">
-                            Focused on infrastructure as code and CI/CD improvements for faster, more dependable
-                            delivery.
-                        </p>
-                        <ul class="timeline-points">
-                            <li>Engineered IaC solutions with Terraform for consistent deployments.</li>
-                            <li>Reduced deployment lead time by roughly 80% using GitLab CI and Jenkins.</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
-
-            <section id="toolbox" class="section panel reveal">
-                <div class="section-heading">
-                    <p class="eyebrow">Core toolbox</p>
-                    <h3>Platforms, systems, and delivery stacks I work with</h3>
-                </div>
-
-                <div class="tool-grid">
-                    <article class="tool-card">
-                        <h4>Infrastructure &amp; cloud</h4>
-                        <div class="chip-row">
-                            <span class="stack-chip">AWS</span>
-                            <span class="stack-chip">Azure</span>
-                            <span class="stack-chip">Terraform</span>
-                            <span class="stack-chip">Ansible</span>
-                        </div>
-                    </article>
-                    <article class="tool-card">
-                        <h4>Containers &amp; orchestration</h4>
-                        <div class="chip-row">
-                            <span class="stack-chip">Kubernetes</span>
-                            <span class="stack-chip">Docker</span>
-                        </div>
-                    </article>
-                    <article class="tool-card">
-                        <h4>CI/CD systems</h4>
-                        <div class="chip-row">
-                            <span class="stack-chip">Jenkins</span>
-                            <span class="stack-chip">GitHub Actions</span>
-                            <span class="stack-chip">GitLab CI</span>
-                        </div>
-                    </article>
-                    <article class="tool-card">
-                        <h4>Observability &amp; response</h4>
-                        <div class="chip-row">
-                            <span class="stack-chip">Prometheus</span>
-                            <span class="stack-chip">Icinga</span>
-                            <span class="stack-chip">Dashboards</span>
-                            <span class="stack-chip">Incident response</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <section id="wins" class="section panel reveal">
-                <div class="section-heading">
-                    <p class="eyebrow">Selected highlights</p>
-                    <h3>A few representative wins from recent work</h3>
-                </div>
-
-                <div class="story-grid">
-                    <article class="story-card">
-                        <p class="story-kicker">Migration at scale</p>
-                        <h4>Moved 10k+ infrastructure configurations on an aggressive timeline</h4>
-                        <p>The program stayed focused on speed without losing control over quality and repeatability.
-                        </p>
-                    </article>
-                    <article class="story-card">
-                        <p class="story-kicker">Operational visibility</p>
-                        <h4>Introduced real-time dashboards that improved response time by half</h4>
-                        <p>Clearer signal meant less guesswork during incidents and better coordination across teams.
-                        </p>
-                    </article>
-                    <article class="story-card">
-                        <p class="story-kicker">Delivery systems</p>
-                        <h4>Built automation and CI/CD foundations that shortened release cycles dramatically</h4>
-                        <p>Focused on reliable pipelines, reproducible environments, and less manual operational drag.
-                        </p>
-                    </article>
-                </div>
-            </section>
-
-            <section id="connect" class="section panel contact-section reveal">
-                <div class="section-heading">
-                    <p class="eyebrow">Let&apos;s connect</p>
-                    <h3>Open to lead technical roles in cloud operations, DevOps, and reliability engineering</h3>
-                </div>
-
-                <div class="contact-layout">
-                    <div>
-                        <p class="contact-copy">
-                            If you need someone who can organize delivery systems, modernize cloud operations, and make
-                            infrastructure easier to trust, I&apos;d love to talk.
-                        </p>
-
-                        <div class="contact-actions">
-                            <a href="mailto:rathodlokendar@gmail.com" class="btn btn-primary">
-                                <i class="fas fa-envelope"></i>
-                                rathodlokendar@gmail.com
-                            </a>
-                            <a href="https://www.linkedin.com/in/lokendar-singh/" target="_blank" rel="noopener noreferrer"
-                                class="btn btn-secondary">
-                                <i class="fab fa-linkedin-in"></i>
-                                LinkedIn profile
-                            </a>
-                        </div>
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-meta">
+                        <span class="timeline-date">2019 — 2021</span>
+                        <span class="timeline-company">Tekno Point</span>
                     </div>
-
-                    <div class="contact-note">
-                        <p class="note-kicker">Best fit for</p>
-                        <ul class="fit-list">
-                            <li>Cloud platform modernization</li>
-                            <li>Automation strategy and delivery governance</li>
-                            <li>Reliability engineering leadership</li>
-                        </ul>
-                        <a href="https://github.com/rathodloki" target="_blank" rel="noopener noreferrer" class="chip-link">
-                            <i class="fab fa-github"></i>
-                            Explore GitHub
-                        </a>
+                    <div class="timeline-main">
+                        <h3 class="timeline-role">DevOps Engineer</h3>
+                        <p class="timeline-description">Constructed and managed IaC scripts via Terraform. Decreased client release cycle periods by 80% using Jenkins and GitLab CI pipelines.</p>
                     </div>
                 </div>
-            </section>
 
-            <footer class="footer">
-                Built as a fast static portfolio and ready for GitHub Pages deployment.
-            </footer>
-        </main>
-    </div>
+            </div>
+        </section>
+
+        <!-- Stats/Impact Section -->
+        <section class="section stats-section scroll-reveal">
+            <div class="stats-row">
+                <div class="stat-unit">
+                    <div class="stat-big">10K+</div>
+                    <div class="stat-text">Configurations Migrated</div>
+                </div>
+                <div class="stat-unit">
+                    <div class="stat-big">50%</div>
+                    <div class="stat-text">MTTR Incident Slashed</div>
+                </div>
+                <div class="stat-unit">
+                    <div class="stat-big">5.5+</div>
+                    <div class="stat-text">Years SRE Experience</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section scroll-reveal">
+            <h2 class="contact-lead">Tell me about your next cloud project.</h2>
+            <div class="contact-action">
+                <a href="mailto:rathodlokendar@gmail.com" class="btn-handshake">
+                    <span>Get in Touch</span>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">© 2026 Lokendar Singh Rathod</div>
+        <div class="footer-right">Status: Nominal // Region: IN</div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
